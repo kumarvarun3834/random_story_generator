@@ -1,5 +1,9 @@
 // globals.dart
 library globals;
 
-int numberf = 1;
+String charPart = "NaN";   // default empty value
+String settPart = "NaN";
+String actionPart = "NaN";
+String moralPart = "NaN";
+
 
