@@ -244,8 +244,8 @@ class _GradientContainerState extends State<GradientContainer> {
   void updateDice() {
     setState(() {
       Map<String,Object> curr_data   = rules[RandomNumberSelect(1, rules.length-1).result];
-      String charPart  = curr_data["character"] as String;
 
+      global.charPart  = curr_data["character"] as String;
       global.settPart  = (curr_data["settings"] as List<String>)[RandomNumberSelect(1, (curr_data["settings"] as List<String>).length-1).result];
       global.actionPart    = (curr_data["actions"] as List<String>)[RandomNumberSelect(1, (curr_data["actions"] as List<String>).length-1).result];
       global.moralPart   = (curr_data["morals"] as List<String>)[RandomNumberSelect(1, (curr_data["morals"] as List<String>).length-1).result];
@@ -266,9 +266,14 @@ class _GradientContainerState extends State<GradientContainer> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           // ImageContainer("assets/images/dice-${global.numberf}.png"),
-          TextContainer(global.charPart, Colors.black, 30),
+
+          if (global.charPart != "NaN")
+            TextContainer(global.charPart, Colors.black, 30),
+          if (global.settPart != "NaN")
           TextContainer(global.settPart, Colors.black, 30),
+          if (global.actionPart != "NaN")
           TextContainer(global.actionPart, Colors.black, 30),
+          if (global.moralPart != "NaN")
           TextContainer(global.moralPart, Colors.black, 30),
           const SizedBox(height: 50),
           ButtonsTemplate(onPressed: updateDice),
