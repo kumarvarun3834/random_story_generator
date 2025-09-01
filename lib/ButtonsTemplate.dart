@@ -7,9 +7,17 @@ class ButtonsTemplate extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TextButton(
+    return ElevatedButton(
       onPressed: onPressed,
-      child: Center(child: TextContainer("Regenerate", Colors.black, 30),)
+      style: ElevatedButton.styleFrom(
+        backgroundColor: Colors.deepPurpleAccent,
+        padding: EdgeInsets.symmetric(horizontal: 40, vertical: 20),
+        textStyle: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+        shadowColor: Colors.purpleAccent,
+        elevation: 15,
+      ),
+      child: Text("✨ Tell me a story ✨"),
     );
   }
 }

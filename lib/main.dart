@@ -13,14 +13,39 @@ class MyApp extends StatelessWidget {
   return MaterialApp(
   // home: Scaffold(body: Center(child: Text("here we go"))),
   home: Scaffold(
-  body: GradientContainer([
-    // Color.fromARGB(255, 255, 0, 0),
-    Color.fromARGB(255, 255, 255, 255),
-    Color.fromARGB(255, 255, 0, 0),
-    Color.fromARGB(255, 255, 0, 0),
-    Color.fromARGB(255, 255, 255, 255),
-  ])
-  ),
-  );
+    body:Container(
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          colors: [Colors.indigo.shade900, Colors.black],
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+        ),
+      ),
+      padding: EdgeInsets.all(20),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+        Center(child: Text(
+        "Fantasy Story Generator",
+        style: TextStyle(
+          fontSize: 28,
+          fontWeight: FontWeight.bold,
+          color: Colors.purpleAccent,
+          shadows: [
+            Shadow(
+              blurRadius: 10,
+              color: Colors.purpleAccent,
+              offset: Offset(0, 0),
+            ),
+          ],
+        ),
+      ),
+        )
+        ,
+          GradientContainer()]
+      )
+  )
+  )
+    );
   }
 }
