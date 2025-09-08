@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:random_story_generator/TextContainer.dart';
 
 class ButtonsTemplate extends StatelessWidget {
   final VoidCallback onPressed;
